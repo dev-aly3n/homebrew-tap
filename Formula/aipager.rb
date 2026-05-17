@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/7d/c4/d4fbe5f91bec6c945618cc406b436a1b779e1b8256229a1ecdc247f97d19/aipager-0.3.1.tar.gz"
-  sha256 "b4574a8e8a142a0231b905b6f0e143f47db3a921e4b9a5c88868471ab5d0ce6f"
+  url "https://files.pythonhosted.org/packages/a0/35/d7863da15b9565ef7acd4f6db7bc25b652f16272997cb95691ab51b5bdd5/aipager-0.3.2.tar.gz"
+  sha256 "52173710b3eae069a852e640b945c76af43359163b39920a36bef9abc2e18f81"
   license "MIT"
 
   depends_on "python@3.12"
@@ -54,7 +54,7 @@ class Aipager < Formula
     # Homebrew supplies dtach via the `dtach` formula dep; the bundled
     # `dtach-bin` PyPI package is therefore unneeded and has no sdist
     # available. Strip it from the dependency list before installing.
-    inreplace "pyproject.toml", /\s*"dtach-bin>=0\.9",?\n/, "\n"
+    inreplace "pyproject.toml", /\s*"dtach-bin[^"]*",?\n/, "\n"
 
     virtualenv_install_with_resources
   end
