@@ -3,6 +3,14 @@
 Homebrew formulas for [aipager](https://github.com/dev-aly3n/aipager) and
 related projects.
 
+> **Recommended:** `uv tool install aipager`. uv ships its own Python
+> interpreter so it sidesteps Homebrew's `python@3.12`-vs-Xcode
+> compatibility headaches (most recently the
+> `pyexpat _XML_SetAllocTrackerActivationThreshold` symbol error on
+> macOS Tahoe). This formula is a courtesy for brew-only setups; if
+> install fails, fall back to uv. Full install matrix in the
+> [aipager README](https://github.com/dev-aly3n/aipager#install).
+
 ## Install
 
 ```sh
