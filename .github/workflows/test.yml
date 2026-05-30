@@ -15,17 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Tap this checkout
+        # Homebrew refuses formulae addressed by path — they must live under
+        # a registered tap. Point dev-aly3n/tap at the current workspace so
+        # `brew install dev-aly3n/tap/aipager` resolves to THIS commit.
+        run: brew tap dev-aly3n/tap "$GITHUB_WORKSPACE"
+
       - name: Install formula from source
         # --build-from-source forces a full venv build using the resource
         # blocks (instead of pulling a pre-built bottle), which is exactly
         # the path a `brew install dev-aly3n/tap/aipager` user takes.
-        run: brew install --build-from-source ./Formula/aipager.rb
+        run: brew install --build-from-source dev-aly3n/tap/aipager
 
       - name: brew test (smoke + import check)
         # Runs the formula's `test do` block — `--version`, `--help`, dtach
         # presence, and the Python import smoke that would have caught the
         # missing PyYAML resource at brew-test time.
-        run: brew test aipager
+        run: brew test dev-aly3n/tap/aipager
 
       - name: Round-trip smoke from PATH
         # Catches PATH / shim breakage independently of `brew test`.
