@@ -1,0 +1,34 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Weekly run catches transitive-dependency drift on PyPI before a user does.
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+jobs:
+  brew-install:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install formula from source
+        # --build-from-source forces a full venv build using the resource
+        # blocks (instead of pulling a pre-built bottle), which is exactly
+        # the path a `brew install dev-aly3n/tap/aipager` user takes.
+        run: brew install --build-from-source ./Formula/aipager.rb
+
+      - name: brew test (smoke + import check)
+        # Runs the formula's `test do` block — `--version`, `--help`, dtach
+        # presence, and the Python import smoke that would have caught the
+        # missing PyYAML resource at brew-test time.
+        run: brew test aipager
+
+      - name: Round-trip smoke from PATH
+        # Catches PATH / shim breakage independently of `brew test`.
+        run: |
+          aipager --version
+          aipager --help | head -20

@@ -106,5 +106,12 @@ class Aipager < Formula
     # dtach should resolve to Homebrew's, not the venv's
     dtach_path = Formula["dtach"].opt_bin/"dtach"
     assert_predicate dtach_path, :exist?
+
+    # Import smoke: pulls in the modules whose deps the resource list must
+    # supply (yaml, telegram, rich, questionary, …). Catches a missing
+    # `resource` block at brew-test time instead of at runtime on a user's
+    # machine.
+    system libexec/"bin/python", "-c",
+      "import aipager.cli, aipager.config, aipager.policy, aipager.bot.notify"
   end
 end
