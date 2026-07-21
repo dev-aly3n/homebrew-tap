@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/60/0f/ed9c417a94d2d3ee54a3286e8fc5417419132700c0844e399772b14e9feb/aipager-0.4.20.tar.gz"
-  sha256 "8a62090f69e595b1466e4a510693a8a1e6b78018755b1dd82e51131f316ebf46"
+  url "https://files.pythonhosted.org/packages/f6/ff/8c0f1edb53420f21ee5068f1e97d0f3349a26fc197e5b13c3fd862c9cd11/aipager-0.4.21.tar.gz"
+  sha256 "8181cb83d335b146bf6e4c34fabb2287c5d1ef29e533f05878579e9467982c29"
   license "MIT"
 
   depends_on "python@3.12"
