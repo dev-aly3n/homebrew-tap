@@ -32,6 +32,8 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -40,10 +42,41 @@ PYPI = "https://pypi.org/pypi"
 EXCLUDED = {"dtach-bin", "aipager"}
 
 
-def _pypi(name: str, ver: str | None = None) -> dict:
+def _pypi(name: str, ver: str | None = None, *, attempts: int = 8) -> dict:
+    """Fetch PyPI's JSON metadata, retrying a 404 for a version we expect.
+
+    PyPI's JSON API is eventually consistent across CDN edges. The
+    publish workflow already waits for `pypi.org/pypi/aipager/<v>/json`
+    to answer before running this script — and on the v0.7.1 release it
+    DID answer 200 to that curl, then returned 404 to this urlopen
+    seconds later, failing the release's tap bump. Same URL, different
+    edge. Retrying here rather than in the workflow covers the
+    dependency lookups below too, which have the same exposure.
+
+    Only 404 and 5xx are retried: a 403 or a malformed URL will not fix
+    itself, and spinning for a minute on those would just hide the real
+    error.
+    """
     url = f"{PYPI}/{name}/{ver}/json" if ver else f"{PYPI}/{name}/json"
-    with urllib.request.urlopen(url) as r:
-        return json.load(r)
+    delay = 2.0
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(url) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            retryable = e.code == 404 or 500 <= e.code < 600
+            if not retryable or attempt == attempts:
+                raise
+            print(f"  {url} -> HTTP {e.code}, retrying in {delay:.0f}s "
+                  f"({attempt}/{attempts})", file=sys.stderr)
+        except urllib.error.URLError as e:
+            if attempt == attempts:
+                raise
+            print(f"  {url} -> {e.reason}, retrying in {delay:.0f}s "
+                  f"({attempt}/{attempts})", file=sys.stderr)
+        time.sleep(delay)
+        delay = min(delay * 2, 30.0)
+    raise AssertionError("unreachable")   # pragma: no cover
 
 
 def _sdist(name: str, ver: str) -> tuple[str, str]:
