@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/65/66/46772a7e2cb83c9d134bdcb5a978d67d96ae613adfa916527ec9b875e51b/aipager-0.7.4.tar.gz"
-  sha256 "e468e06f479af2dd96a2cfeb8154382f3c9f637ad9daace316120640821c220a"
+  url "https://files.pythonhosted.org/packages/e6/69/b666ce29fc90283e90eb0603f2e466e7cdb953ed87ad7d1e8fece650a822/aipager-0.7.5.tar.gz"
+  sha256 "7ee503a959626b25d03fa639e18e0a7561b4fa7134484f07eacaeb16c2b5c5d7"
   license "MIT"
 
   depends_on "python@3.12"
@@ -31,8 +31,8 @@ class Aipager < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
+    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
   end
 
   resource "attrs" do
@@ -126,8 +126,8 @@ class Aipager < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   resource "yarl" do
