@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/c4/90/e940ef4c08c9b314a788a215dde8a42f2a4aa1d6d6095807128c28feb80b/aipager-0.7.12.tar.gz"
-  sha256 "e386e02452c41a0f5dad8d5f1df6a29a72b1054fd4eef560c334535ce7fe6e83"
+  url "https://files.pythonhosted.org/packages/d6/26/3125a3b6fae05662317533d1fe32f4c49f7096c24d9b82408af5a88c4e10/aipager-0.7.13.tar.gz"
+  sha256 "aae8076a2586430f9325099b734620aa1213ed66221a984c052844262fca97e9"
   license "MIT"
 
   depends_on "python@3.12"
@@ -91,8 +91,8 @@ class Aipager < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pygments" do
@@ -131,8 +131,8 @@ class Aipager < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install
