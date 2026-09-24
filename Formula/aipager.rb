@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/d6/26/3125a3b6fae05662317533d1fe32f4c49f7096c24d9b82408af5a88c4e10/aipager-0.7.13.tar.gz"
-  sha256 "aae8076a2586430f9325099b734620aa1213ed66221a984c052844262fca97e9"
+  url "https://files.pythonhosted.org/packages/6b/fd/36e5d45ce7c0fdec8aeada12fcc6ef26fe241ab5dee07da50e4e769ca8fb/aipager-0.7.14.tar.gz"
+  sha256 "ad72438e2580380ffc558105c1234027270c25a2807a6610734234b11b672913"
   license "MIT"
 
   depends_on "python@3.12"
@@ -66,8 +66,8 @@ class Aipager < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do
@@ -81,8 +81,8 @@ class Aipager < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
-    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "prompt-toolkit" do
@@ -126,8 +126,8 @@ class Aipager < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   resource "yarl" do
