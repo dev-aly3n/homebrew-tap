@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/97/3c/506f32641c1041665fa8bcd19987f98913a105cce038805521b29d97b2e9/aipager-1.0.1.tar.gz"
-  sha256 "9017be6d72c22c1e8e6f947727b6a434654c6c650ac15bd2e9afc09bf2b525df"
+  url "https://files.pythonhosted.org/packages/bd/ec/22c40f6a073740c510ff79c8367d820c5f21601d3ca710a4368dae0eb355/aipager-1.1.0.tar.gz"
+  sha256 "b539574f9a6216cd1d999b458fa151c4136fa59718eba7f86567b10c09dc6bce"
   license "MIT"
 
   depends_on "python@3.12"
@@ -16,8 +16,8 @@ class Aipager < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
-    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiolimiter" do
@@ -81,8 +81,8 @@ class Aipager < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "prompt-toolkit" do
