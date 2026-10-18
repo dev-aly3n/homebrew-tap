@@ -3,8 +3,8 @@ class Aipager < Formula
 
   desc "Telegram remote-control daemon for Claude Code CLI sessions"
   homepage "https://github.com/dev-aly3n/aipager"
-  url "https://files.pythonhosted.org/packages/10/13/f82b358bdb732b4420aeee65ab3fca875cc503596faf4480e7a0434f879b/aipager-1.3.6.tar.gz"
-  sha256 "1d7800febf0df17484457af673707a2afc4eda79b4559be280dc44b274c9b4da"
+  url "https://files.pythonhosted.org/packages/29/5d/de1a37984abf243c964461cb97170f6a835d1533d5ec6a9dee0f4ca3f73c/aipager-1.3.7.tar.gz"
+  sha256 "215d59a3e83949c3867d47edf8b77d360a41f4617f347284db47763b75143ca9"
   license "MIT"
 
   depends_on "python@3.12"
@@ -41,8 +41,8 @@ class Aipager < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
-    sha256 "741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"
+    url "https://files.pythonhosted.org/packages/7e/eb/a2aa1ac3ea30dd3f30ca57f40232138b6b0040719316ecb85daf61167771/certifi-2026.10.18.tar.gz"
+    sha256 "b9995d97b64d0431a5af837d8ca8cd6238104d1f319f04bd93ea43124d6c861e"
   end
 
   resource "frozenlist" do
